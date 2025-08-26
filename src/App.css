@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.color{
+    background-color: hsl(206, 94%, 87%);
+}
