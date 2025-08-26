@@ -33,6 +33,9 @@
       .icon2 {
         @apply w-[1vw] h-[1vw]
       }
+      .icon3 {
+        @apply w-[1.05vw] h-[1.05vw]
+      }
       .vote{
         @apply font-bold
       }

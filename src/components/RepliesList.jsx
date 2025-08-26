@@ -47,13 +47,19 @@ function RepliesList({
               <p className="w-fit text-grey500 text-shadow-2xs">{createdAt}</p>
             </span>
             <p
-              className="pointer text-purple600 font-medium flex items-center gap-[0.5dvw] w-fit group hover:text-purple200"
+              className={`pointer font-medium flex items-center gap-[0.5dvw] w-fit group hover:text-purple200 text-purple600`}
               onClick={replyBox}
             >
-                {username!=="juliusomo"?
+                {username!=="juliusomo" &&
                  <>
-                    <IconReply className="icon2 fill-current group-hover:fill-purple200" />
-              Reply </> : <><IconDelete className="icon2 fill-current group-hover:fill-purple200" /></>
+                    <IconReply className="icon3 fill-current group-hover:fill-purple200" />
+              Reply </>}  
+            </p>
+            <p className={`font-medium flex items-center w-fit ${username!=="juliusomo"?"hidden":"block"}`}>
+            {username==="juliusomo" && <div className="flex gap-[3vw]">
+                <div className="pointer flex items-center gap-[0.3vw] group hover:text-pink200 text-pink400"><IconDelete className="icon3 fill-current group-hover:fill-pink200" /> Delete</div> 
+                <div className="pointer flex items-center gap-[0.3vw] group text-purple600 hover:text-purple200"><IconEdit className="icon3 fill-current group-hover:fill-purple200" /> Edit</div>
+                </div>
                 }
             </p>
           </div>
