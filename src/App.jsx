@@ -6,7 +6,7 @@ import IconReply from "./assets/icon-reply.svg?react";
 import IconDelete from "./assets/icon-delete.svg?react";
 import IconEdit from "./assets/icon-edit.svg?react";
 import CommentCard from "./components/CommentCard";
-import RepliesList from "./components/RepliesList";
+
 
 function App() {
   const [usersdata, setUsersdata] = useState();
@@ -36,6 +36,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setUsersdata(data);
+      
       })
       .catch((err) => console.log(err));
   }, []);
@@ -56,6 +57,8 @@ function App() {
                   IconPlus={IconPlus}
                   IconMinus={IconMinus}
                   IconReply={IconReply}
+                  IconDelete={IconDelete}
+                  IconEdit={IconEdit}
                   score={c.score}
                   setScore={setScore}
                   setVote={setVote}
@@ -65,44 +68,16 @@ function App() {
                   createdAt={c.createdAt}
                   replyBox={replyBox}
                   comment={c.content}
+                  replies={c.replies}
+                  currentUser={usersdata.currentUser.username}
                 />
               ))}
             </>
           ) : (
             <p>Loading...</p>
           )}
-           
-          <div className="flex justify-end w-full">
-          <div className="bg-white100 w-[90%] h-[10vw] gap-[1vw] flex flex-col items-end mt-[0.5vw] rounded-[0.7vw]">
-            {usersdata ? (
-              <>
-                {usersdata.comments.map((c) =>
-                  c.replies.map((e) => (
-                    <RepliesList
-                    key={e.id}
-                    IconPlus={IconPlus}
-                    IconMinus={IconMinus}
-                    IconReply={IconReply}
-                    IconDelete={IconDelete}
-                    IconEdit={IconEdit}
-                    score={e.score}
-                      setScore={setScore}
-                      setVote={setVote}
-                      vote={vote}
-                      avatar={e.user.image.webp}
-                      username={e.user.username}
-                      createdAt={e.createdAt}
-                      replyBox={replyBox}
-                      comment={e.content}
-                    />
-                  ))
-                )}
-              </>
-            ) : (
-              ""
-              )}
-              </div>
-          </div>
+
+          
         </div>
       </div>
     </>
