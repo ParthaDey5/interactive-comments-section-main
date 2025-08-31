@@ -163,12 +163,17 @@ function CommentCard({
                 user: usersdata.currentUser,
                 replies: []
               };
-              setUsersdata(prev => ({
-                ...prev,
-                comments: addReplyToComment(prev.comments, ID, replyObj)
-              }));
-              setReplyText("");
-              setNewreply(false);
+              const updated ={
+                ...usersdata, 
+                comments: addReplyToComment(usersdata.comments, ID, replyObj)
+              }
+              setUsersdata(updated)
+              localStorage.setItem("usersdata", JSON.stringify(updated));
+          
+                setReplyText("");
+            
+                setNewreply(false);
+               
             }}
             className="mediumTxt bg-purple600 !w-fit !h-fit px-[1.7vw] py-[0.8vw] !rounded-[0.55vw] hover:bg-purple200"
           >

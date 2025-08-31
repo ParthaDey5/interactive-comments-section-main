@@ -13,7 +13,7 @@ function App() {
     return stored ? JSON.parse(stored) : null;
   });
 
-  const [isreply, setIsreply] = useState(false);
+
 
 
   function addReplyToComment(comments, targetId, newReply) {
@@ -33,7 +33,7 @@ function App() {
       return comment;
     });
   }
-  function deleteReplyToComment(comments = [], targetId) {
+  function deleteReplyToComment(comments, targetId) {
     return comments
       .filter(comment => comment.id !== targetId) // remove match at this level
       .map(comment => ({
