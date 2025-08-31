@@ -19,11 +19,21 @@
     color: hsl(211, 10%, 45%)
   }
     img {
-      @apply w-[2dvw] aspect-square
+      @apply !w-[2vw] !h-[2vw] cursor-pointer
+    }
+    textarea {
+      @apply w-full !rounded-[0.6vw] border px-[1vw] py-[0.5vw] 
     }
     .pointer {
       @apply cursor-pointer
     }
+    .mediumTxt{
+      @apply tracking-wide
+    }
+    button {
+      @apply flex items-center justify-center cursor-pointer !text-white100 rounded-[0.4vw]  w-[8vw] h-[2.4vw]
+    }
+    
       h1 {
         @apply bg-purple600 cursor-pointer
       }
@@ -39,12 +49,33 @@
       .vote{
         @apply font-bold
       }
-      img {
-        @apply cursor-pointer
+      
+      @keyframes pop {
+        0% {
+          opacity: 0;
+          transform: scale(0.4);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      
+      .animate-pop {
+        animation: pop 300ms ease-out forwards;
       }
       @media (min-width: 376px) and (max-width: 2560px){
+        button{
+          font-size: calc(3px + (22 - 3) * ((100vw - 376px) / 2185)) !important;  
+        }
         p{
           font-size: calc(4.4px + (30 - 4.4) * ((100vw - 376px) / 2185)) !important;  
+        }
+        .smallTxt{
+          font-size: calc(2.2px + (21.5 - 2) * ((100vw - 376px) / 2185)) !important;  
+        }
+        .mediumTxt{
+          font-size: calc(4px + (24 - 2) * ((100vw - 376px) / 2185)) !important;  
         }
         .vote{
           font-size: calc(4px + (28 - 4) * ((100vw - 376px) / 2185)) !important;  
