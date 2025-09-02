@@ -46,14 +46,14 @@ function CommentCard({
                 Are you sure you want to delete this comment? This will remove the comment and can't be undone.
               </p>
               <span className="flex justify-between">
-                <button className="bg-purple600" onClick={() => setPendingDeleteId(false)}>
+                <button className="bg-purple600 button2" onClick={() => setPendingDeleteId(false)}>
                   NO, CANCEL
                 </button>
                 <button
-                  className="bg-pink400"
+                  className="bg-pink400 button2"
                   onClick={() => {
                     handleDeleteComment(ID);
-                    console.log(ID);
+                  
                     
                   }}
                 >
@@ -184,9 +184,14 @@ function CommentCard({
 
       {/* New replies */}
       {newReply && (
-        <div className="desktop:rounded-[0.7vw] rounded-[1.7vw] w-full bg-white100 desktop:h-[10vw] h-[50vw] desktop:p-[1.8vw] p-[4vw] flex justify-between gap-[1vw]">
+        <div className="desktop:rounded-[0.7vw] rounded-[1.7vw] w-full bg-white100 desktop:h-[10vw] h-[50vw] desktop:p-[1.8vw] p-[4vw] relative flex justify-between gap-[1vw]">
           <div className="relative">
-          <span className="desktop:w-[3vw] w-fit desktop:relative desktop:flex absolute bottom-0">
+          <span className="w-fit desktop:relative desktop:flex hidden">
+            <img src={usersdata.currentUser.image.webp} alt="currentUser" />
+          </span>
+          </div>
+          <div className="absolute bottom-0 pb-[4vw]">
+          <span className="w-fit desktop:hidden block">
             <img src={usersdata.currentUser.image.webp} alt="currentUser" />
           </span>
           </div>
@@ -196,7 +201,6 @@ function CommentCard({
             placeholder="Add a comment..."
           />
           <div className="relative">
-
           <button
             onClick={() => {
             
@@ -223,7 +227,40 @@ function CommentCard({
               setNewreply(false);
               
             }}
-            className="mediumTxt bg-purple600 !w-fit !h-fit desktop:px-[1.7vw] px-[4vw] desktop:py-[0.8vw] py-[2vw] desktop:!rounded-[0.55vw] !rounded-[1.1vw] hover:bg-purple200 desktop:relative absolute bottom-0 right-0"
+            className="mediumTxt bg-purple600 !w-fit !h-fit desktop:px-[1.7vw] px-[4vw] desktop:py-[0.8vw] py-[2vw] hover:bg-purple200 desktop:block hidden"
+            >
+            REPLY
+          </button>
+            </div>
+
+          <div className="absolute bottom-0 right-0 pb-[4vw] pr-[4vw]">
+          <button
+            onClick={() => {
+            
+              if (!replyText.trim()) return;
+              const replyObj = {
+                id: Date.now(),
+                content: replyText,
+                createdAt: new Date().toISOString(),
+                score: 0,
+                vote: 0,
+                replyingTo: username,
+                user: usersdata.currentUser,
+                replies: []
+              };
+              const updated ={
+                ...usersdata, 
+                comments: addReplyToComment(usersdata.comments, ID, replyObj)
+              }
+              setUsersdata(updated)
+              localStorage.setItem("usersdata", JSON.stringify(updated));
+              
+              setReplyText("");
+              
+              setNewreply(false);
+              
+            }}
+            className="mediumTxt bg-purple600 !w-fit !h-fit desktop:px-[1.7vw] px-[4vw] desktop:py-[0.8vw] py-[2vw] hover:bg-purple200 desktop:hidden block"
             >
             REPLY
           </button>

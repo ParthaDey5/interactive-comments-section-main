@@ -32,7 +32,7 @@
       @apply desktop:!w-[2vw] !w-[8vw] desktop:!h-[2vw] !h-[8vw] cursor-pointer
     }
     textarea {
-      @apply w-full desktop:!rounded-[0.6vw] !rounded-[1.6vw] desktop:mb-0 mb-[15vw] border border-grey100 desktop:px-[1vw] px-[5vw] desktop:py-[0.5vw] py-[2vw] 
+      @apply desktop:w-[38vw] desktop:!rounded-[0.6vw] !rounded-[1.6vw] desktop:mb-0 mb-[15vw] border border-grey100 desktop:px-[1vw] px-[5vw] desktop:py-[0.5vw] py-[2vw] 
     }
     .pointer {
       @apply cursor-pointer
@@ -41,6 +41,9 @@
       @apply tracking-wide
     }
     button {
+      @apply flex items-center justify-center cursor-pointer !tracking-wide !text-white100 desktop:!rounded-[0.6vw] !rounded-[1.8vw]  desktop:w-[8vw] w-[38vw] desktop:h-[2.4vw] h-[14vw]
+    }
+    .button2 {
       @apply flex items-center justify-center cursor-pointer !tracking-wide !text-white100 desktop:!rounded-[0.4vw] !rounded-[1.8vw]  desktop:w-[8vw] w-[38vw] desktop:h-[2.4vw] h-[14vw]
     }
     a{
@@ -83,6 +86,9 @@
         .extraBigTxt{
           font-size: calc(5.4px + (30 - 5.4) * ((100vw - 376px) / 2185)) !important;  
         }
+        textarea{
+          font-size: calc(4.4px + (30 - 4.4) * ((100vw - 376px) / 2185)) !important;  
+        }
         p{
           font-size: calc(4.4px + (30 - 4.4) * ((100vw - 376px) / 2185)) !important;  
         }
@@ -103,6 +109,9 @@
         }
         .extraBigTxt{
           font-size: calc(1.4px + (22 - 1.4) * ((100vw - 0px) / 375)) !important;  
+        }
+        textarea{
+          font-size: calc(1.4px + (16 - 1.4) * ((100vw - 0px) / 375)) !important;  
         }
         p{
           font-size: calc(1.4px + (16 - 1.4) * ((100vw - 0px) / 375)) !important;  
