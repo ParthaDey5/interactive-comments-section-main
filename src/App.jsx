@@ -118,7 +118,7 @@ function App() {
             />
           ))
         ) : (
-          <p>Loading...</p>
+          <p></p>
         )}
       </div>
     </div>

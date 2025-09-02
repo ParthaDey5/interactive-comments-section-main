@@ -184,7 +184,7 @@ function CommentCard({
 
       {/* New replies */}
       {newReply && (
-        <div className="desktop:rounded-[0.7vw] rounded-[1.7vw] w-full bg-white100 desktop:h-[10vw] h-[50vw] desktop:p-[1.8vw] p-[4vw] relative flex justify-between gap-[1vw]">
+        <div className="desktop:rounded-[0.7vw] rounded-[1.7vw] w-full bg-white100 desktop:h-[11vw] h-[50vw] desktop:p-[1.8vw] p-[4vw] relative flex justify-between gap-[1vw]">
           <div className="relative">
           <span className="w-fit desktop:relative desktop:flex hidden">
             <img src={usersdata.currentUser.image.webp} alt="currentUser" />
