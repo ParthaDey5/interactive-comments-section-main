@@ -39,8 +39,8 @@ function CommentCard({
       {/* Delete Modal */}
       {pendingDeleteId && (
         <div className="fixed top-0 right-0 !bg-dark100 w-[100vw] h-screen z-[99999]">
-          <span className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 desktop:rounded-[0.5vw] rounded-[2.5vw] desktop:w-[20vw] w-[90vw] bg-white100 desktop:p-[1.5vw] p-[6vw] animate-pop">
-            <span className="h-full flex flex-col justify-between desktop:gap-0 gap-[3vw]">
+          <span className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 desktop:rounded-[0.6vw] rounded-[2.5vw] desktop:w-[20vw] w-[90vw] bg-white100 desktop:p-[1.5vw] p-[6vw] animate-pop">
+            <span className="h-full flex flex-col justify-between desktop:gap-[1vw] gap-[3vw]">
               <p className="font-bold extraBigTxt">Delete comment</p>
               <p className="desktopallTxt">
                 Are you sure you want to delete this comment? This will remove the comment and can't be undone.

@@ -80,11 +80,14 @@
         button{
           font-size: calc(3px + (22 - 3) * ((100vw - 376px) / 2185)) !important;  
         }
+        .extraBigTxt{
+          font-size: calc(5.4px + (30 - 5.4) * ((100vw - 376px) / 2185)) !important;  
+        }
         p{
           font-size: calc(4.4px + (30 - 4.4) * ((100vw - 376px) / 2185)) !important;  
         }
         .desktopallTxt{
-          font-size: calc(2.2px + (21.5 - 2) * ((100vw - 376px) / 2185)) !important;  
+          font-size: calc(3.5px + (21.5 - 3.5) * ((100vw - 376px) / 2185)) !important;  
         }
         .mediumTxt{
           font-size: calc(4px + (24 - 2) * ((100vw - 376px) / 2185)) !important;  
