@@ -34,8 +34,7 @@ function App() {
     });
   }
   function deleteReplyToComment(comments, targetId) {
-    return comments
-      .filter(comment => comment.id !== targetId) // remove match at this level
+    return comments?.filter(comment => comment.id !== targetId) // remove match at this level
       .map(comment => ({
         ...comment,
         replies: deleteReplyToComment(comment.replies, targetId) // recurse
@@ -88,8 +87,8 @@ function App() {
   }, [usersdata]);
 
   return (
-    <div className="w-[100vw] min-h-screen flex justify-center">
-      <div className="flex flex-col items-center gap-[1vw] pt-[5dvw] w-[52%]">
+    <div className="w-screen !max-w-[100vw] min-h-screen flex justify-center">
+      <div className="flex flex-col items-center desktop:gap-[1vw] gap-[4vw] pt-[5dvw] desktop:w-[52%] w-[92%] ">
         {usersdata ? (
           usersdata.comments.map((c) => (
             <CommentCard
@@ -107,7 +106,7 @@ function App() {
               avatar={c.user.image.webp}
               username={c.user.username}
               createdAt={c.createdAt}
-              
+              replyingTo={c.replyingTo}
               comment={c.content}
               addReplyToComment={addReplyToComment}       
               deleteReplyToComment= {deleteReplyToComment}
