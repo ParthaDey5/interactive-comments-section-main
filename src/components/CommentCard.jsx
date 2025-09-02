@@ -39,9 +39,9 @@ function CommentCard({
       {/* Delete Modal */}
       {pendingDeleteId && (
         <div className="fixed top-0 right-0 !bg-dark100 w-[100vw] h-screen z-[99999]">
-          <span className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-[0.5vw] w-[20vw] aspect-[5/3] bg-white100 p-[1.5vw] animate-pop">
-            <span className="h-full flex flex-col justify-between gap-0">
-              <p className="font-bold">Delete comment</p>
+          <span className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 desktop:rounded-[0.5vw] rounded-[2.5vw] desktop:w-[20vw] w-[90vw] bg-white100 desktop:p-[1.5vw] p-[6vw] animate-pop">
+            <span className="h-full flex flex-col justify-between desktop:gap-0 gap-[3vw]">
+              <p className="font-bold extraBigTxt">Delete comment</p>
               <p className="desktopallTxt">
                 Are you sure you want to delete this comment? This will remove the comment and can't be undone.
               </p>
@@ -133,7 +133,7 @@ function CommentCard({
             {/* Reply button */}
             
             <span
-              className="pointer font-medium desktop:relative desktop:flex desktop:items-center hidden gap-[0.5dvw] w-fit group hover:text-purple200 text-purple600 bg-amber-400"
+              className="pointer font-medium desktop:relative desktop:flex desktop:items-center hidden gap-[0.5dvw] w-fit group hover:text-purple200 text-purple600 "
               onClick={() => setNewreply(true)}
               >
               <p

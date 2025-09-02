@@ -41,7 +41,7 @@
       @apply tracking-wide
     }
     button {
-      @apply flex items-center justify-center cursor-pointer !text-white100 rounded-[0.4vw]  w-[8vw] h-[2.4vw]
+      @apply flex items-center justify-center cursor-pointer !tracking-wide !text-white100 desktop:!rounded-[0.4vw] !rounded-[1.8vw]  desktop:w-[8vw] w-[38vw] desktop:h-[2.4vw] h-[14vw]
     }
     a{
       @apply cursor-pointer
@@ -96,13 +96,16 @@
       }
       @media (min-width: 0px) and  (max-width: 375px){
         button{
-          font-size: calc(3px + (22 - 3) * ((100vw - 0px) / 375)) !important;  
+          font-size: calc(1px + (17 - 1) * ((100vw - 0px) / 375)) !important;  
+        }
+        .extraBigTxt{
+          font-size: calc(1.4px + (22 - 1.4) * ((100vw - 0px) / 375)) !important;  
         }
         p{
           font-size: calc(1.4px + (16 - 1.4) * ((100vw - 0px) / 375)) !important;  
         }
         .desktopallTxt{
-          font-size: calc(2.2px + (21.5 - 2) * ((100vw - 0px) / 375)) !important;  
+          font-size: calc(2px + (16 - 2) * ((100vw - 0px) / 375)) !important;  
         }
         .mediumTxt{
           font-size: calc(2px + (14 - 2) * ((100vw - 0px) / 375)) !important;  
