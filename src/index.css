@@ -4,6 +4,11 @@
 @import "./styles/_mixins.scss";
 @import "tailwindcss";
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
 @layer base {
   *{
     font-family: "Rubik", sans-serif;
@@ -18,12 +23,12 @@
     display: flex;
     align-items: center;
     justify-items: center;
-    background-color: hsl(228, 33%, 97%);
+    /* background-color: hsl(228, 33%, 97%); */
   }
   body {
     max-width: 100vw;
     min-height: 100vh;
-    background-color: hsl(228, 33%, 97%);
+    /* background-color: hsl(228, 33%, 97%); */
   }
   #comments {
     color: hsl(211, 10%, 45%)
@@ -32,7 +37,7 @@
       @apply desktop:!w-[2vw] !w-[8vw] desktop:!h-[2vw] !h-[8vw] cursor-pointer
     }
     textarea {
-      @apply desktop:w-[38vw] desktop:!rounded-[0.6vw] !rounded-[1.6vw] desktop:mb-0 mb-[15vw] border border-grey100 desktop:px-[1vw] px-[5vw] desktop:py-[0.5vw] py-[2vw] 
+      @apply desktop:w-[36vw] w-[80vw] desktop:!rounded-[0.6vw] !rounded-[1.6vw] desktop:mb-0 mb-[15vw] border  desktop:px-[1vw] px-[5vw] desktop:py-[0.5vw] py-[2vw] 
     }
     .pointer {
       @apply cursor-pointer
@@ -41,10 +46,10 @@
       @apply tracking-wide
     }
     button {
-      @apply flex items-center justify-center cursor-pointer !tracking-wide !text-white100 desktop:!rounded-[0.6vw] !rounded-[1.8vw]  desktop:w-[8vw] w-[38vw] desktop:h-[2.4vw] h-[14vw]
+      @apply flex items-center justify-center cursor-pointer !tracking-wide !text-grey50 desktop:!rounded-[0.6vw] !rounded-[1.8vw]  desktop:w-[7vw] w-[24vw] desktop:h-[3.4vw] h-[11vw]
     }
     .button2 {
-      @apply flex items-center justify-center cursor-pointer !tracking-wide !text-white100 desktop:!rounded-[0.4vw] !rounded-[1.8vw]  desktop:w-[8vw] w-[38vw] desktop:h-[2.4vw] h-[14vw]
+      @apply flex items-center justify-center cursor-pointer !tracking-wide !text-grey50 desktop:!rounded-[0.4vw] !rounded-[1.8vw]  desktop:w-[8vw] w-[38vw] desktop:h-[2.4vw] h-[14vw] 
     }
     a{
       @apply cursor-pointer
@@ -61,8 +66,11 @@
       .icon3 {
         @apply desktop:w-[1.05vw] w-[3.3vw] desktop:h-[1.05vw] h-[3.3vw]
       }
-      .vote{
+      .vote {
         @apply font-bold
+      }
+      .extraSmalltext {
+        @apply font-medium tracking-wider text-purple600
       }
       
       @keyframes pop {
@@ -101,6 +109,9 @@
         .vote{
           font-size: calc(4px + (28 - 4) * ((100vw - 376px) / 2185)) !important;  
         }
+        .extraSmalltext{
+          font-size: calc(2px + (17 - 2) * ((100vw - 376px) / 2185)) !important;  
+        }
         
       }
       @media (min-width: 0px) and  (max-width: 375px){
@@ -124,6 +135,9 @@
         }
         .vote{
           font-size: calc(1px + (16 - 1) * ((100vw - 0px) / 375)) !important;  
+        }
+        .extraSmalltext{
+          font-size: calc(1px + (6 - 1) * ((100vw - 0px) / 375)) !important;  
         }
         
       }
