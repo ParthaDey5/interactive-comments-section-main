@@ -176,8 +176,8 @@ function App() {
           ) : (
             <p></p>
             )}
-            {
-             <NewComment key={""} {...{dark, usersdata,setUsersdata}}/>
+            {usersdata?
+             <NewComment key={""} {...{dark, usersdata,setUsersdata}}/>:""
             }
 
             

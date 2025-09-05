@@ -10,7 +10,7 @@ function NewComment({setUsersdata,dark,usersdata}) {
         <div className={`desktop:rounded-[0.7vw] rounded-[1.7vw] w-full ${dark?"bg-grey50":"bg-white100"} desktop:h-[11vw] h-[50vw] desktop:p-[1.8vw] p-[4vw] relative flex justify-between gap-[1vw]`}>
           <div className="relative">
             <span className="w-fit desktop:relative desktop:flex hidden">
-              <img src={usersdata.currentUser.image.webp} alt="currentUser" />
+              <img src={usersdata?.currentUser.image.webp} alt="currentUser" />
             </span>
           </div>
           <div className="absolute bottom-0 mb-[5vw]">
