@@ -129,7 +129,7 @@ function CommentCard({
             <span className="flex items-center desktop:gap-[1vw] gap-[4vw] w-fit ">
               <img src={avatar} alt="img" />
               <p className="w-fit font-bold pointer">{username}</p>
-              <p className="w-fit text-grey500 text-shadow-2xs">
+              <p className="whitespace-nowrap mediumTxt w-fit text-grey500 text-shadow-2xs">
                 {isISODate(createdAt) ? format(createdAt) : createdAt}
               </p>
             </span>
@@ -290,7 +290,7 @@ function CommentCard({
       {replies.length > 0 && (
         <div className="flex justify-end w-full">
           <div className={`border-l-2 ${dark?"border-l-grey300":"border-l-grey100"} flex justify-end w-[95%] transition-all duration-200 ease-linear`}>
-            <div className="w-[93%] gap-[1vw] flex flex-col items-end mt-[0.5vw] rounded-[0.7vw]">
+            <div className="w-[93%] gap-[1vw] flex flex-col items-end desktop:my-0 my-[2vw] rounded-[0.7vw]">
               {sortComments(replies).map((reply) => (
                 <CommentCard
                   key={reply?.id}
