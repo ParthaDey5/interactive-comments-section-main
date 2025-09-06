@@ -184,7 +184,7 @@ function CommentCard({
           className="h-[8vw]">{comment}</textarea> :
           <div>
             <p className="text-grey500 dark:text-white100 w-full desktop:mb-0 mb-[14vw]">
-              <a href="#">
+              <a>
                 <b>
                   {replyingTo ? "@" : ""}
                   {replyingTo}
