@@ -129,7 +129,7 @@ function App() {
   return (
     <div className={`dark:bg-grey400 bg-grey50 w-screen !max-w-[100vw] min-h-screen flex justify-center transition-all duration-300 ease-linear`}>
       
-      <div className="flex flex-col items-center desktop:gap-[1vw] gap-[4vw] desktop:pt-[5vw] pt-[15vw] desktop:w-[52%] w-[92%] ">
+      <div className="flex flex-col items-center desktop:gap-[1.5vw] gap-[4vw] desktop:pt-[5vw] pt-[15vw] desktop:w-[52%] w-[92%] ">
         {usersdata ? (
           
           sortComments(usersdata.comments).map((c) => (
