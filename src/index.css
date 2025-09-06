@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 @config "../tailwind.config.js";
-@import "./styles/_mixins.scss";
 @import "tailwindcss";
 
 @layer utilities {
@@ -30,14 +29,12 @@
     min-height: 100vh;
     /* background-color: hsl(228, 33%, 97%); */
   }
-  #comments {
-    color: hsl(211, 10%, 45%)
-  }
+  
     img {
       @apply desktop:!w-[2vw] !w-[8vw] desktop:!h-[2vw] !h-[8vw] cursor-pointer
     }
     textarea {
-      @apply desktop:w-[36vw] w-[80vw] desktop:!rounded-[0.6vw] !rounded-[1.6vw] desktop:mb-0 mb-[15vw] border  desktop:px-[1vw] px-[5vw] desktop:py-[0.5vw] py-[2vw] 
+      @apply desktop:w-[36vw] w-[80vw] desktop:!rounded-[0.6vw] !rounded-[1.6vw] desktop:mb-0 mb-[15vw] dark:border-purple400 border-grey100 border-1 desktop:px-[1vw] px-[5vw] desktop:py-[0.5vw] py-[2vw] 
     }
     .pointer {
       @apply cursor-pointer
@@ -46,7 +43,7 @@
       @apply tracking-wide
     }
     button {
-      @apply flex items-center justify-center cursor-pointer !tracking-wide !text-grey50 desktop:!rounded-[0.6vw] !rounded-[1.8vw]  desktop:w-[7vw] w-[24vw] desktop:h-[3.4vw] h-[11vw]
+      @apply brightness-108 flex items-center justify-center cursor-pointer !tracking-wide !text-grey50 desktop:!rounded-[0.6vw] !rounded-[1.8vw]  desktop:w-[7vw] w-[24vw] desktop:h-[3.4vw] h-[11vw]
     }
     .button2 {
       @apply flex items-center justify-center cursor-pointer !tracking-wide !text-grey50 desktop:!rounded-[0.4vw] !rounded-[1.8vw]  desktop:w-[8vw] w-[38vw] desktop:h-[2.4vw] h-[14vw] 
@@ -72,7 +69,10 @@
       .extraSmalltext {
         @apply font-medium tracking-wider text-purple600
       }
-      
+     textarea::placeholder{
+      @apply text-grey300
+     }    
+
       @keyframes pop {
         0% {
           opacity: 0;
@@ -131,7 +131,7 @@
           font-size: calc(2px + (16 - 2) * ((100vw - 0px) / 375)) !important;  
         }
         .mediumTxt{
-          font-size: calc(2px + (14 - 2) * ((100vw - 0px) / 375)) !important;  
+          font-size: calc(0px + (13 - 0) * ((100vw - 0px) / 375)) !important;  
         }
         .vote{
           font-size: calc(1px + (16 - 1) * ((100vw - 0px) / 375)) !important;  
@@ -141,17 +141,7 @@
         }
         
       }
-      .comment-card {
-  @include comment-card;
-}
 
-.btn-primary {
-  @include button(hsl(238, 40%, 52%)); 
-}
-
-.modal {
-  @include modal-center;
-}
  
 
 }

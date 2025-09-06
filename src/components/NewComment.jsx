@@ -7,7 +7,7 @@ function NewComment({setUsersdata,dark,usersdata}) {
     <>
         {/* New replies */}
       {(
-        <div className={`desktop:rounded-[0.7vw] rounded-[1.7vw] w-full ${dark?"bg-grey50":"bg-white100"} desktop:h-[11vw] h-[50vw] desktop:p-[1.8vw] p-[4vw] relative flex justify-between gap-[1vw]`}>
+        <div className={`desktop:rounded-[0.7vw] rounded-[1.7vw] w-full dark:bg-black bg-white100 desktop:h-[11vw] h-[50vw] desktop:p-[1.8vw] p-[4vw] relative flex justify-between gap-[1vw] desktop:mb-[3vw] mb-[10vw]`}>
           <div className="relative">
             <span className="w-fit desktop:relative desktop:flex hidden">
               <img src={usersdata?.currentUser.image.webp} alt="currentUser" />
@@ -19,7 +19,7 @@ function NewComment({setUsersdata,dark,usersdata}) {
             </span>
           </div>
           <textarea
-          className={`${dark?"border-grey200":"border-grey100"} transition-all duration-300 ease-linear`}
+          className={`transition-all duration-300 ease-linear`}
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             placeholder="Add a comment..."
@@ -51,7 +51,7 @@ function NewComment({setUsersdata,dark,usersdata}) {
                   setDraft("")
                   
               }}
-              className="mediumTxt bg-purple600 no-scrollbar desktop:px-[1.7vw] px-[4vw] desktop:py-[1vw] py-[2vw] hover:bg-purple200 desktop:block hidden"
+              className="mediumTxt bg-purple600 dark:bg-purple400 no-scrollbar desktop:px-[1.7vw] px-[4vw] desktop:py-[1vw] py-[2vw] hover:bg-purple200 desktop:block hidden"
             >
               SEND
             </button>
@@ -83,7 +83,7 @@ function NewComment({setUsersdata,dark,usersdata}) {
                   setDraft("")
                   
               }}
-              className="mediumTxt bg-purple600 no-scrollbar desktop:px-[1.7vw] px-[4vw] desktop:py-[1vw] py-[2vw] hover:bg-purple200 desktop:hidden block"
+              className="mediumTxt bg-purple600 dark:bg-purple400 no-scrollbar desktop:px-[1.7vw] px-[4vw] desktop:py-[1vw] py-[2vw] hover:bg-purple200 desktop:hidden block"
             >
               SEND
             </button>
