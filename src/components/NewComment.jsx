@@ -7,7 +7,7 @@ function NewComment({setUsersdata,dark,usersdata}) {
     <>
         {/* New replies */}
       {(
-        <div className={`desktop:rounded-[0.7vw] rounded-[1.7vw] w-full dark:bg-black bg-white100 desktop:h-[11vw] h-[50vw] desktop:p-[1.8vw] p-[4vw] relative flex justify-between gap-[1vw] desktop:mb-[5vw] mb-[10vw]`}>
+        <div className={`desktop:rounded-[0.7vw] rounded-[1.7vw] w-full dark:bg-black bg-white100 desktop:h-[11vw] h-[50vw] desktop:p-[1.8vw] p-[4vw] relative flex justify-between gap-[1vw] desktop:mb-[4.5vw] mb-[10vw]`}>
           <div className="relative">
             <span className="w-fit desktop:relative desktop:flex hidden">
               <img src={usersdata?.currentUser.image.webp} alt="currentUser" />
